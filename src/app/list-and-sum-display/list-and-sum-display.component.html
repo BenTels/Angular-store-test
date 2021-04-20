@@ -1,0 +1,8 @@
+<p>list-and-sum-display works!</p>
+
+<ul>
+    <li *ngIf="!numbers || numbers.length === 0">0</li>
+    <li *ngFor="let num of numbers">{{num}}</li>
+</ul>
+
+<div class="sum">{{sum()}}</div>

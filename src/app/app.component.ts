@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NUMBER_LIST } from './TEMPDATA';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'store-test';
+
+  numbers: Array<number> = NUMBER_LIST;
+
+  onNumberAdded(event : number) {
+    this.numbers.push(event);
+  }
 }

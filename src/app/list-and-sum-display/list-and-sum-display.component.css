@@ -1,0 +1,14 @@
+div.sum {
+    font-size: 120%;
+    margin-left: 1em;
+}
+
+li {
+    list-style-type: none;
+    margin-left: -1em;
+}
+
+li:last-child {
+    border-bottom: 1px solid black;
+    width: fit-content;
+}
