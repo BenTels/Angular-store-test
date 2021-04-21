@@ -1,4 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { ADD_ACTION } from '../number-list/number-list-actions';
 
 @Component({
   selector: 'number-input-form',
@@ -7,21 +9,19 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class NumberFormComponent implements OnInit {
 
-  curVal : number = 10;
+  curVal: number = 10;
 
-  @Output('numberTap') numberEmitter: EventEmitter<number> = new EventEmitter<number>();
-
-  constructor() { }
+  constructor(private numList: Store<{ numList: number[] }>) { }
 
   ngOnInit(): void {
   }
 
   newVal(val: string): void {
-    this.curVal = parseInt(val);
+    this.curVal = parseInt(val, 10);
   }
 
   onButtonClicked(): void {
     console.log(this.curVal);
-    this.numberEmitter.emit(this.curVal);
+    this.numList.dispatch(ADD_ACTION({num: this.curVal}));
   }
 }

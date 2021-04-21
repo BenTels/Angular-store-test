@@ -1,6 +1,6 @@
 <p>number-form works!</p>
 
 <form>
-    <input type="number" [value]="curVal" (change)="newVal($event.target.value)" step="1"/>
+    <input type="number" [value]="curVal" #numberField (change)="newVal(numberField.value)" step="1"/>
     <input type="button" value="Add" (click)="onButtonClicked()">
 </form>
