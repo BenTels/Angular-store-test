@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { NumberFormComponent } from './number-form/number-form.component';
 import { ListAndSumDisplayComponent } from './list-and-sum-display/list-and-sum-display.component';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { ListAndSumDisplayComponent } from './list-and-sum-display/list-and-sum-
     ListAndSumDisplayComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    StoreModule.forRoot({}, {})
   ],
   providers: [],
   bootstrap: [AppComponent]
